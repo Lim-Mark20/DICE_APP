@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:math';
 import 'package:flutter/material.dart';
 void main() {
@@ -36,6 +35,16 @@ class _DiceHomePageState extends State<DiceHomePage> {
     });
   }
 
+  Color getColorForTotal(int total) {
+    if (total < 6) {
+      return Colors.red;
+    } else if (total == 6) {
+      return Colors.yellow;
+    } else {
+      return Colors.blue;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,10 +67,10 @@ class _DiceHomePageState extends State<DiceHomePage> {
             Padding(padding: const EdgeInsets.symmetric(vertical: 10)),
             Text(
               'Total: ${leftDiceNumber + rightDiceNumber}',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.w900,
-                  color: Color.fromARGB(255, 52, 114, 239),
+                  color: getColorForTotal(leftDiceNumber + rightDiceNumber),
                   ),
                 ),
             const SizedBox(height: 10),
