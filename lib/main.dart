@@ -64,7 +64,7 @@ class _DiceHomePageState extends State<DiceHomePage> {
                 Image.asset('assets/images/dice$rightDiceNumber.png', width: 140, height: 100),
               ],
             ),
-            Padding(padding: const EdgeInsets.symmetric(vertical: 10)),
+            const SizedBox(height: 10),
             Text(
               'Total: ${leftDiceNumber + rightDiceNumber}',
                 style: TextStyle(
